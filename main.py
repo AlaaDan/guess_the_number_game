@@ -42,8 +42,7 @@ def game_engine(count):
           count -= 1
           print("Too low.")
           print(f"You have {count} attempts left.")
-      else:
-        print("Wrong input, ")
+      
   
   if count == 0:
       print(f"""You've ran our of guesses, you lose
