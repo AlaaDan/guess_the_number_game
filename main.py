@@ -27,26 +27,26 @@ HARD: You will have 5 attempts to guess the number. Type 'hard'\n""").lower()
 
 count = start()
 
+def game_engine(count):
+  while count != 0:
+      guess = int(input("Make a guess: "))
+      if guess == secret_number:
+          print(f"""You've got it, you win 
+  The secret number was {secret_number}""")
+          break
+      elif guess > secret_number:
+          count -= 1
+          print("Too high.")
+          print(f"You have {count} attempts left.")
+      elif guess < secret_number:
+          count -= 1
+          print("Too low.")
+          print(f"You have {count} attempts left.")
+      else:
+        print("Wrong input, ")
+  
+  if count == 0:
+      print(f"""You've ran our of guesses, you lose
+  The secret number was {secret_number}""")
 
-while count != 0:
-    guess = int(input("Make a guess: "))
-    if guess == secret_number:
-        print(f"""You've got it, you win 
-The secret number was {secret_number}""")
-        break
-    elif guess > secret_number:
-        count -= 1
-        print("Too high. Guess again")
-        print(f"You have {count} attempts left.")
-    elif guess < secret_number:
-        count -= 1
-        print("Too low. Guess again")
-        print(f"You have {count} attempts left.")
-    else:
-      print("Wrong input, ")
-
-if count == 0:
-    print(f"""You've ran our of guesses, you lose
-The secret number was {secret_number}""")
-
-
+game_engine(count)
